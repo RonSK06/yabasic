@@ -1,0 +1,43 @@
+let R = 1
+let BAC = 90
+
+
+
+let AB = R
+let AC = R
+
+
+let CE = 1/2 * sqrt ( (AB*AB) + (AC *AC))
+print "1. CE ", CE
+
+let n=1
+do
+  
+  let AE= sqrt((AC*AC)-(CE*CE))
+  print "2. AE ", AE
+  
+  let DE=R-AE
+  print "3. DE ", DE
+  
+  let CD=sqrt((DE*DE)+(CE*CE))
+  print "4 Loop Final. CD ", CD
+  
+  let P=(360/(BAC))*CD
+  
+  print "Count =", n
+  Print "Angle resolution =", BAC/2
+  print "Pi = ", P 
+  print "----" 
+  
+  
+  n=n+1
+  CE = CD/2
+  
+  BAC = BAC/2
+  AB = DE
+  if BAC < .1 break
+  
+loop
+
+Print "Angle resolution =", BAC
+print "Final Pi", P
